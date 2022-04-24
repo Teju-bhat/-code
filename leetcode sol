@@ -298,4 +298,59 @@ class Solution {
     }
 }
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+10)
+N = 3
+arr[] = {9,9,9}
+Output: 
+1 0 0 0
 
+
+N = 3
+arr[] = {1, 2, 4}
+Output: 
+1 2 5
+
+import java.util.*;
+public class Main
+{
+    public int[] plus(int [] arr,int N)
+    {
+         
+        for(int i=N-1;i>=0;i--)
+        {
+            if(arr[i]<9)
+            {
+                arr[i]++;
+                return arr;
+            }
+            if(i==0)
+            {
+                arr[i]=10;
+                return arr;
+            }
+            arr[i]=0;
+        }
+        return arr;
+        
+    }
+	public static void main(String[] args)
+	{
+	     Scanner sc=new Scanner(System.in);
+	    int N=sc.nextInt();
+	    int [] arr=new int[N];
+	    for(int i=0;i<N;i++)
+	    {
+	        arr[i]=sc.nextInt();
+	    }
+	    int a[]=new int[N];
+		Main ans=new Main();
+		
+		a=ans.plus(arr,N);
+		for(int i=0; i<N; i++)
+		{
+		    System.out.print(a[i]);
+		}
+		
+		
+	}
+}
