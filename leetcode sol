@@ -589,6 +589,49 @@ class Solution {
     }
    }    
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+28. Implement strStr()
+https://leetcode.com/problems/implement-strstr/
+______________________________________________________________
+Input: haystack = "hello", needle = "ll"
+Output: 2
+Example 2:
 
+Input: haystack = "aaaaa", needle = "bba"
+Output: -1
+_____________________________________________________________
 
+class Solution {
+    public int strStr(String haystack, String needle)
+    { 
+        if(needle.equals("")){
+              return 0;
+          } 
+        if(needle.equals(haystack)){
+          return 0;
+        }
+        char [] h=haystack.toCharArray();
+        char[] n=needle.toCharArray();
+        int count=0;
+        int s=h.length;
+      int  a=n.length;
+     
+        for(int i=0;i<=(s-a);i++)
+        {      boolean isbool=true;
+             for(int j=0;j<a;j++)
+             {
+                if(n[j]!=h[i+j])
+                {   
+                    isbool=false;
+                       break;
+                 }
+              }
+                 if(isbool==true)
+                 {
+                   return i;
+                 }
+             } return -1;
+       }
+       
+}
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
